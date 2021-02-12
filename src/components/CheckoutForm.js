@@ -16,11 +16,7 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues] = useForm(initialValue);
-
-  const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  const [values, handleChanges] = useForm(initialValue); // useForm is invoked and comes with values and handleChanges
 
   const handleSubmit = (e) => {
     e.preventDefault();
